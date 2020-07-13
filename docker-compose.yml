@@ -70,3 +70,4 @@ services:
     command: infinity
     volumes:
     - ./conf/policy:/policy
+    - ./secret-file.tar:/data/secret-file.tar
