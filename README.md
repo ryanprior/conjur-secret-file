@@ -38,3 +38,7 @@ ryan@swallowtail:~/dev/conjur-secret-file$ diff f.hex t.hex
 640a641
 > 00002800: 0000 0000 0000                           ......
 ```
+
+### Note
+
+I created `secret-file.tar` by running `tar zf secret-file.tar secret-file`
