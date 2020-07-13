@@ -1,0 +1,18 @@
+- !policy
+  id: secret-files
+  body:
+    - !variable
+      id: secret-script
+      annotations:
+        file-type: POSIX tar archive
+        contents: secret Bourne-Again shell script, ASCII text executable
+    - !group script-users
+    - !permit
+      resource: !variable secret-script
+      privileges: [ read, execute ]
+      role: !group script-users
+
+- !user alice
+- !grant
+  role: !group secret-files/script-users
+  members: [ !user alice ]
